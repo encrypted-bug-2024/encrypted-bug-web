@@ -1,0 +1,46 @@
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Apply the animation to both texts */
+.text-animation {
+    display: inline-block;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+    animation-duration: 6s;  /* Total duration for the cycle */
+    animation-iteration-count: infinite; /* Infinite loop */
+    animation-fill-mode: both; /* Keeps the text visible or invisible as needed */
+}
+
+/* "Best Choice" animation */
+.text-animation:nth-child(1) {
+    animation: slide-in-left 1s forwards 0s, slide-out-right 1s forwards 3s; /* "Best Choice" appears, stays for 3s, and disappears */
+}
+
+/* "Step Ahead" animation */
+.text-animation:nth-child(2) {
+    animation: slide-in-left 1s forwards 3s, slide-out-right 1s forwards 6s; /* "Step Ahead" appears after 3s, stays for 3s, and disappears */
+}
+
+#icon-1{
+    color:  #04e27b;
+    font-size: 24px;
+}
